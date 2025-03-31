@@ -1,0 +1,905 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Form Styles */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input:focus, select:focus {
+    border-color: #000000;
+    outline: none;
+    box-shadow: 0 0 5px rgba(190, 198, 192, 0.5);
+}
+
+/* Button Styles */
+button, .btn {
+    display: inline-block;
+    background-color: #dee7df; /* Consistent blue color */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .btn:hover {
+    background-color: #699376; /* Darker blue on hover */
+}
+
+.btn {
+    display: inline-block;
+    background-color: #728c6a; /* Red color for logout */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #c8c8d6;
+}
+
+/* Link Styles */
+a {
+    color: #999da1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Login and Register Forms */
+.login-container, .register-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h1, .register-container h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.login-container form, .register-container form {
+    margin-top: 20px;
+}
+
+.login-container button, .register-container button {
+    background-color: #28a745;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-container button:hover, .register-container button:hover {
+    background-color: #218838;
+}
+
+/* Post Form Styles */
+.post-form {
+    margin: 20px 0;
+}
+
+.post-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Posts Section */
+.posts {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post {
+    background: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.post-header {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.post-content {
+    font-size: 16px;
+    color: #333;
+}
+
+.post-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between the like button and the like count */
+}
+
+.like-btn {
+    background-color: #aaafb5; /* Blue background */
+    color: #fff; /* White text */
+    border: none;
+    padding: 6px 12px; /* Adjusted padding for a smaller button */
+    font-size: 14px; /* Slightly smaller font size */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: auto; /* Ensure the button size adjusts to its content */
+    display: inline-block; /* Prevent it from stretching */
+}
+
+.like-btn:hover {
+    background-color: #72757a; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Like Icon Styles */
+.like-icon {
+    font-size: 20px; /* Adjust the size of the thumbs-up icon */
+    color: #9ba5b0; /* Blue color for the icon */
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.3s ease;
+    display: inline-block;
+}
+
+.like-icon:hover {
+    color: #b3b4b6; /* Darker blue on hover */
+    transform: scale(1.2); /* Slight zoom effect on hover */
+}
+
+.like-count {
+    font-size: 14px;
+    color: #555;
+    margin-left: 10px; /* Add space between the icon and the like count */
+}
+
+.post-bubble {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+}
+
+.post-header {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.post-content {
+    font-size: 16px;
+    color: #333;
+}
+
+.post-timestamp {
+    font-size: 12px;
+    color: #999;
+}
+
+.post-bubble {
+    max-width: 70%;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    background-color: #dcf8c6; /* Light green background like WhatsApp */
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word;
+    font-size: 14px;
+    color: #333;
+}
+
+.post-bubble .post-header {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #075e54; /* WhatsApp green for the username */
+}
+
+.post-bubble .post-content {
+    margin-bottom: 5px;
+    line-height: 1.5;
+}
+
+.post-bubble .post-timestamp {
+    font-size: 12px;
+    color: #999;
+    text-align: right;
+}
+
+/* Align bubbles to the left or right */
+.post-bubble {
+    margin-left: auto;
+    margin-right: 0;
+    background-color: #dcf8c6; /* Light green for the user's posts */
+}
+
+.post-bubble:nth-child(odd) {
+    margin-left: 0;
+    margin-right: auto;
+    background-color: #ffffff; /* White for other users' posts */
+    border: 1px solid #e0e0e0;
+}
+
+/* Schedule Meetup Styles */
+.schedule-meetup {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-meetup h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.schedule-meetup label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.schedule-meetup select,
+.schedule-meetup input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.schedule-meetup .btn {
+    background-color: #509558;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.schedule-meetup .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Bookings Styles */
+.bookings {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bookings h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.bookings table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.bookings table th,
+.bookings table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.bookings table th {
+    background-color: #99a4b0;
+    color: #fff;
+}
+
+.bookings table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.bookings table tr:hover {
+    background-color: #e9ecef;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    background-color: #f4f4f9;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background-color: #a7b0b9;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #e0e5eb;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.main-content h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #007BFF;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.section form select,
+.section form textarea,
+.section form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.section form button {
+    background-color: #6ec581;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.section form button:hover {
+    background-color: #0056b3;
+}
+
+.appointment-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.btn {
+    background-color: #2b7c40;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #33ab59;
+}
+
+.download-btn {
+    background-color: #28a745;
+}
+
+.download-btn:hover {
+    background-color: #218838;
+}
+
+.add-btn {
+    background-color: #85797a;
+}
+
+.add-btn:hover {
+    background-color: #c4cdc8;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #e9ecef;
+}
+
+/* Mood Tracking Container */
+.mood-tracking-container {
+    display: flex;
+    gap: 20px; /* Space between the form and the history */
+    align-items: flex-start; /* Align items to the top */
+}
+
+/* Mood Form */
+.mood-form {
+    flex: 1; /* Take up equal space */
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mood-form h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.mood-form form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.mood-form form select,
+.mood-form form textarea,
+.mood-form form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.mood-form form button {
+    background-color: #6ec581;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.mood-form form button:hover {
+    background-color: #0056b3;
+}
+
+/* Mood History */
+.mood-history {
+    flex: 2; /* Take up more space than the form */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mood-history h2 {
+    margin-bottom: 15px;
+    color: #007BFF;
+}
+
+.mood-history table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.mood-history table th,
+.mood-history table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.mood-history table th {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+.mood-history table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.mood-history table tr:hover {
+    background-color: #e9ecef;
+}
+
+/* Status Sharing Container */
+.status-sharing-container {
+    display: flex;
+    gap: 20px; /* Space between the form and the posts */
+    align-items: flex-start; /* Align items to the top */
+}
+
+/* Status Form */
+.status-form {
+    flex: 1; /* Take up equal space */
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.status-form h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.status-form form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.status-form form button {
+    background-color: #6ec581;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.status-form form button:hover {
+    background-color: #0056b3;
+}
+
+/* Recent Posts */
+.recent-posts {
+    flex: 2; /* Take up more space than the form */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recent-posts h2 {
+    margin-bottom: 15px;
+    color: #007BFF;
+}
+
+.posts .post-bubble {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+}
+
+.posts .post-header {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.posts .post-content {
+    font-size: 16px;
+    color: #333;
+}
+
+.posts .post-timestamp {
+    font-size: 12px;
+    color: #999;
+}
+
+/* Appointment Container */
+.appointment-container {
+    display: flex;
+    gap: 20px; /* Space between the form and the appointments list */
+    align-items: flex-start; /* Align items to the top */
+}
+
+/* Appointment Form */
+.appointment-form {
+    flex: 1; /* Take up equal space */
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-form h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.appointment-form form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.appointment-form form select,
+.appointment-form form input,
+.appointment-form form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.appointment-form form button {
+    background-color: #6ec581;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.appointment-form form button:hover {
+    background-color: #0056b3;
+}
+
+/* Appointments List */
+.appointments-list {
+    flex: 2; /* Take up more space than the form */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.appointments-list h2 {
+    margin-bottom: 15px;
+    color: #007BFF;
+}
+
+.appointments-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.appointments-list table th,
+.appointments-list table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.appointments-list table th {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+.appointments-list table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.appointments-list table tr:hover {
+    background-color: #e9ecef;
+}
+
+/* Approve, Reject, and Feedback Buttons */
+.approve-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.reject-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.feedback-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.approve-btn:hover,
+.reject-btn:hover,
+.feedback-btn:hover {
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .post-bubble {
+        max-width: 90%;
+    }
+
+    .login-container, .register-container {
+        padding: 15px;
+    }
+
+    button, .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 0;
+    }
+
+    .sidebar ul {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .sidebar ul li {
+        margin: 0;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+}
