@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Mental Health Monitoring System</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="register-container">
+        <h1>Register</h1>
+        <p>Create an account to start using the Mental Health Monitoring System.</p>
+        
+        <form action="../backend/register.php" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+            
+            <label for="role">Register as:</label>
+            <select id="role" name="role" required>
+                <option value="user">User</option>
+                <option value="professional">Professional</option>
+            </select>
+            
+            <!-- Fields for professionals -->
+            <div id="professional-fields" style="display: none;">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name">
+
+                <label for="specialization">Specialization:</label>
+                <input type="text" id="specialization" name="specialization">
+
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location">
+            </div>
+
+            <button type="submit">Register</button>
+        </form>
+        
+        <p>Already have an account? <a href="login.html">Login here</a>.</p>
+    </div>
+
+    <script>
+        // Show/hide professional fields based on role selection
+        document.getElementById('role').addEventListener('change', function () {
+            const professionalFields = document.getElementById('professional-fields');
+            if (this.value === 'professional') {
+                professionalFields.style.display = 'block';
+            } else {
+                professionalFields.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
